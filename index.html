@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Credit Card Benefits Bulletin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="title-block">
+        <h1>💳 Credit Card Benefits Bulletin</h1>
+        <p class="subtitle">Track your perks. Never let a benefit expire again.</p>
+        <span id="sync-status" class="sync-badge sync-off" title="">Sync: off</span>
+      </div>
+      <div class="stats" id="stats"></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <div class="control-group">
+        <label for="search">Search</label>
+        <input type="search" id="search" placeholder="Search card, benefit, notes…" />
+      </div>
+
+      <div class="control-group">
+        <label for="filter-category">Category</label>
+        <select id="filter-category"><option value="">All categories</option></select>
+      </div>
+
+      <div class="control-group">
+        <label for="filter-card">Card</label>
+        <select id="filter-card"><option value="">All cards</option></select>
+      </div>
+
+      <div class="control-group">
+        <label for="filter-status">Status</label>
+        <select id="filter-status">
+          <option value="">All statuses</option>
+          <option value="available">Available</option>
+          <option value="soon">Expiring soon (≤15 days)</option>
+          <option value="used">Used</option>
+          <option value="expired">Expired</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label for="sort-by">Sort by</label>
+        <select id="sort-by">
+          <option value="expiration">Deadline (soonest)</option>
+          <option value="expiration-desc">Deadline (latest)</option>
+          <option value="person">Person</option>
+          <option value="card">Card name</option>
+          <option value="category">Category</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="board" id="board" aria-live="polite"></section>
+    <p class="empty-note" id="empty-note" hidden>No benefits match your filters.</p>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      Click <strong>Mark used</strong> on any card to log it (saved in this browser).
+      <button type="button" id="export-log" class="link-btn">Export usage log (CSV)</button>
+    </p>
+    <p class="footer-sub">Add or edit benefits in <code>data/benefits.json</code>. Last data load: <span id="loaded-at"></span></p>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+# The reminder script uses only the Python standard library (smtplib, email,
+# json, datetime). No third-party packages are required.
+#
+# This file is kept so the setup is obvious and easy to extend later
+# (e.g. if you switch to an API-based email provider like SendGrid).
