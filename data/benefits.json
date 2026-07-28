@@ -1,6 +1,6 @@
 {
   "_comment": "YOUR DATA FILE. 'frequency' = monthly | quarterly | semiannual | annual | one-time. RECURRING deadlines: leave 'expiration' as null to use the calendar reset (end of month/quarter/half-year/year), OR set 'expiration' to a real YYYY-MM-DD date to anchor a specific renewal - the app rolls that date forward one period at a time automatically (use this for annual benefits that renew on a specific anniversary date, e.g. a free night that renews every Aug 22). ONE-TIME: set 'expiration' to a YYYY-MM-DD date, or null if unknown (shows as 'Date TBD'). Set 'used': true to dim a card and stop its reminders; set it back to false anytime to reinstate the benefit (full color, reminders resume). Tip: use the Status = Used filter on the board to find used items to flip back.",
-  "owner_email": "lilin996@gmail.com", "clarkckl@gmail.com",
+  "owner_email": "lilin996@gmail.com",
   "people": {
     "C": "C",
     "H": "H"
