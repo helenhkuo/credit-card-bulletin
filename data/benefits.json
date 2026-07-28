@@ -1,469 +1,514 @@
-	
-_comment	"YOUR DATA FILE. 'frequency' = monthly | quarterly | semiannual | annual | one-time. RECURRING deadlines: leave 'expiration' as null to use the calendar reset (end of month/quarter/half-year/year), OR set 'expiration' to a real YYYY-MM-DD date to anchor a specific renewal - the app rolls that date forward one period at a time automatically (use this for annual benefits that renew on a specific anniversary date, e.g. a free night that renews every Aug 22). ONE-TIME: set 'expiration' to a YYYY-MM-DD date, or null if unknown (shows as 'Date TBD'). Set 'used': true to dim a card and stop its reminders; set it back to false anytime to reinstate the benefit (full color, reminders resume). Tip: use the Status = Used filter on the board to find used items to flip back."
-owner_email	"lilin996@gmail.com"
-people	
-C	"C"
-H	"H"
-benefits	
-0	
-id	"amex-plat-c-lululemon"
-person	"C"
-card	"Amex Platinum"
-benefit	"Lululemon Credit"
-category	"Shopping"
-amount	"$75 / quarter"
-frequency	"quarterly"
-expiration	null
-used	false
-notes	"Enroll in Amex app. U.S. lululemon stores (non-outlet) or lululemon.com."
-1	
-id	"amex-plat-c-saks"
-person	"C"
-card	"Amex Platinum"
-benefit	"Saks Fifth Avenue Credit"
-category	"Shopping"
-amount	"$50 / half"
-frequency	"semiannual"
-expiration	null
-used	true
-notes	"DISCONTINUED July 1, 2026 - no longer offered by Amex. Kept for reference."
-2	
-id	"amex-plat-c-equinox"
-person	"C"
-card	"Amex Platinum"
-benefit	"Equinox Credit"
-category	"Shopping"
-amount	"$300 / year"
-frequency	"annual"
-expiration	null
-used	false
-notes	"Calendar-year credit (resets Dec 31). Enrollment required. (Note: Equinox is a fitness/wellness perk - recategorized to Shopping per your edit.)"
-3	
-id	"amex-plat-c-oura"
-person	"C"
-card	"Amex Platinum"
-benefit	"Oura Ring Credit"
-category	"Shopping"
-amount	"$300"
-frequency	"annual"
-expiration	null
-used	false
-notes	"FLAG: Amex currently lists this as up to $200 one-time toward an Oura Ring, not $300/year - verify amount and whether it recurs."
-4	
-id	"amex-plat-c-resy"
-person	"C"
-card	"Amex Platinum"
-benefit	"Resy Dining Credit"
-category	"Dining"
-amount	"$100 / quarter"
-frequency	"quarterly"
-expiration	null
-used	false
-notes	"Enroll. U.S. Resy restaurants. $400/year total."
-5	
-id	"amex-plat-c-fhr"
-person	"C"
-card	"Amex Platinum"
-benefit	"Fine Hotels + Resorts Credit"
-category	"Hotel"
-amount	"$300 / half"
-frequency	"semiannual"
-expiration	null
-used	false
-notes	"$600/year. Prepaid FHR / Hotel Collection via Amex Travel."
-6	
-id	"amex-plat-c-airline"
-person	"C"
-card	"Amex Platinum"
-benefit	"Airline Fee Credit"
-category	"Travel"
-amount	"$200 / year"
-frequency	"annual"
-expiration	null
-used	false
-notes	"Calendar-year credit (resets Dec 31). Select one airline in your Amex account first."
-7	
-id	"amex-plat-c-digital"
-person	"C"
-card	"Amex Platinum"
-benefit	"Digital Entertainment Credit"
-category	"Entertainment"
-amount	"$25 / month"
-frequency	"monthly"
-expiration	null
-used	false
-notes	"Disney+, Hulu, ESPN+, NYT, Peacock, WSJ, YouTube. Enroll."
-8	
-id	"amex-plat-c-uber"
-person	"C"
-card	"Amex Platinum"
-benefit	"Uber Cash"
-category	"Dining"
-amount	"$15 / month"
-frequency	"monthly"
-expiration	null
-used	false
-notes	"$20 bonus in December. Add card to Uber account."
-9	
-id	"amex-gold-c-resy"
-person	"C"
-card	"Amex Gold"
-benefit	"Resy Credit"
-category	"Dining"
-amount	"$50 / half"
-frequency	"semiannual"
-expiration	null
-used	false
-notes	"Enroll. U.S. Resy restaurants ($100/year)."
-10	
-id	"amex-gold-c-dunkin"
-person	"C"
-card	"Amex Gold"
-benefit	"Dunkin' Credit"
-category	"Dining"
-amount	"$7 / month"
-frequency	"monthly"
-expiration	null
-used	false
-notes	"Enroll in Amex app. U.S. Dunkin' locations."
-11	
-id	"csp-c-doordash"
-person	"C"
-card	"Chase Sapphire Preferred"
-benefit	"DoorDash"
-category	"Dining"
-amount	"$10 / month"
-frequency	"monthly"
-expiration	null
-used	false
-notes	"Non-restaurant order. Requires activated DashPass."
-12	
-id	"csp-c-hotel"
-person	"C"
-card	"Chase Sapphire Preferred"
-benefit	"Chase Travel Hotel Credit"
-category	"Hotel"
-amount	"$100 / year"
-frequency	"annual"
-expiration	"2027-07-01"
-used	false
-notes	"FLAG: benefit year 'starts in July' per sheet - the 2027-07-01 renewal date is a placeholder; confirm your account anniversary. Prepaid hotel via Chase Travel. Doubled to $100 in June 2026."
-13	
-id	"marriott-boundless-c-airline"
-person	"C"
-card	"Marriott Boundless"
-benefit	"Airline Credit (on spend over $250)"
-category	"Travel"
-amount	"$50 / half"
-frequency	"semiannual"
-expiration	null
-used	false
-notes	"FLAG: not a standard Marriott Boundless benefit - verify exact terms."
-14	
-id	"marriott-boundless-c-fn"
-person	"C"
-card	"Marriott Boundless"
-benefit	"Free Night Award (up to 35k)"
-category	"Hotel"
-amount	"1 night (up to 35k)"
-frequency	"annual"
-expiration	"2027-02-28"
-used	false
-notes	"Current cert valid until Feb 2027; renews annually. Can top off with points. FLAG: confirm exact renewal day."
-15	
-id	"hilton-c-credit"
-person	"C"
-card	"Hilton"
-benefit	"Hilton Credit"
-category	"Hotel"
-amount	"$50 / quarter"
-frequency	"quarterly"
-expiration	null
-used	false
-notes	"Quarterly Hilton statement credit."
-16	
-id	"hilton-c-fn"
-person	"C"
-card	"Hilton"
-benefit	"Free Night Award"
-category	"Hotel"
-amount	"1 night"
-frequency	"one-time"
-expiration	"2026-09-08"
-used	false
-notes	"Card-opening benefit, 2026 only (does not renew). Expires 09/08/2026."
-17	
-id	"ihg-c-fn"
-person	"C"
-card	"IHG"
-benefit	"Free Night Award"
-category	"Hotel"
-amount	"1 night"
-frequency	"annual"
-expiration	"2026-09-28"
-used	false
-notes	"Anniversary free night. Expires/renews every Sep 28. Auto-rolls forward each year."
-18	
-id	"hyatt-c-fn"
-person	"C"
-card	"Hyatt"
-benefit	"Free Night Award"
-category	"Hotel"
-amount	"1 night"
-frequency	"annual"
-expiration	"2026-12-20"
-used	false
-notes	"Anniversary free night. Expires/renews every Dec 20. Auto-rolls forward each year."
-19	
-id	"marriott-biz-h-fn-1"
-person	"H"
-card	"Marriott Business"
-benefit	"Free Night #1"
-category	"Hotel"
-amount	"1 night"
-frequency	"one-time"
-expiration	"2027-05-28"
-used	false
-notes	"Welcome offer, 5 nights that can be used separately. Use by 5/28/2027."
-20	
-id	"marriott-biz-h-fn-2"
-person	"H"
-card	"Marriott Business"
-benefit	"Free Night #2"
-category	"Hotel"
-amount	"1 night"
-frequency	"one-time"
-expiration	"2027-05-28"
-used	false
-notes	"Welcome offer, 5 nights that can be used separately. Use by 5/28/2027."
-21	
-id	"marriott-biz-h-fn-3"
-person	"H"
-card	"Marriott Business"
-benefit	"Free Night #3"
-category	"Hotel"
-amount	"1 night"
-frequency	"one-time"
-expiration	"2027-05-28"
-used	false
-notes	"Welcome offer, 5 nights that can be used separately. Use by 5/28/2027."
-22	
-id	"marriott-biz-h-fn-4"
-person	"H"
-card	"Marriott Business"
-benefit	"Free Night #4"
-category	"Hotel"
-amount	"1 night"
-frequency	"one-time"
-expiration	"2027-05-28"
-used	false
-notes	"Welcome offer, 5 nights that can be used separately. Use by 5/28/2027."
-23	
-id	"marriott-biz-h-fn-5"
-person	"H"
-card	"Marriott Business"
-benefit	"Free Night #5"
-category	"Hotel"
-amount	"1 night"
-frequency	"one-time"
-expiration	"2027-05-28"
-used	false
-notes	"Welcome offer, 5 nights that can be used separately. Use by 5/28/2027."
-24	
-id	"boa-atmos-c-companion"
-person	"C"
-card	"BoA Atmos Ascent"
-benefit	"$99 Companion Fare"
-category	"Travel"
-amount	"$99"
-frequency	"one-time"
-expiration	"2027-03-17"
-used	false
-notes	"Annual benefit."
-25	
-id	"strata-h-splurge"
-person	"H"
-card	"Citi Strata Elite"
-benefit	"Splurge Credit"
-category	"Shopping"
-amount	"$200 / year"
-frequency	"annual"
-expiration	null
-used	false
-notes	"Calendar-year credit (resets Dec 31). Register up to 2 brands: Best Buy, American Airlines, Live Nation, 1stDibs, Future PT."
-26	
-id	"strata-h-blacklane"
-person	"H"
-card	"Citi Strata Elite"
-benefit	"Blacklane Credit"
-category	"Travel"
-amount	"$100 / half"
-frequency	"semiannual"
-expiration	null
-used	false
-notes	"$100 Jan-Jun and $100 Jul-Dec. Automatic (no registration)."
-27	
-id	"strata-h-hotel"
-person	"H"
-card	"Citi Strata Elite"
-benefit	"Citi Travel Hotel Benefit"
-category	"Hotel"
-amount	"$300 / year"
-frequency	"annual"
-expiration	null
-used	false
-notes	"Calendar-year credit (resets Dec 31). $300 off a 2+ night prepaid stay booked via cititravel.com."
-28	
-id	"ritz-h-airline"
-person	"H"
-card	"Ritz-Carlton"
-benefit	"Airline Incidental Credit"
-category	"Travel"
-amount	"$300 / year"
-frequency	"annual"
-expiration	null
-used	false
-notes	"Calendar-year credit (resets Dec 31). Not automatic - call J.P. Morgan 1-855-896-2222 to apply."
-29	
-id	"ritz-h-fn"
-person	"H"
-card	"Ritz-Carlton"
-benefit	"Free Night Award (up to 85k)"
-category	"Hotel"
-amount	"1 night"
-frequency	"annual"
-expiration	"2026-08-22"
-used	false
-notes	"Renews every year around Aug 22 (auto-rolls forward). Can top off up to 25k pts."
-30	
-id	"amex-gold-h-resy"
-person	"H"
-card	"Amex Gold"
-benefit	"Resy Credit"
-category	"Dining"
-amount	"$50 / half"
-frequency	"semiannual"
-expiration	null
-used	false
-notes	"Enroll. U.S. Resy restaurants ($100/year)."
-31	
-id	"amex-gold-h-dunkin"
-person	"H"
-card	"Amex Gold"
-benefit	"Dunkin' Credit"
-category	"Dining"
-amount	"$7 / month"
-frequency	"monthly"
-expiration	null
-used	false
-notes	"Enroll in Amex app. U.S. Dunkin' locations."
-32	
-id	"csp-h-doordash"
-person	"H"
-card	"Chase Sapphire Preferred"
-benefit	"DoorDash"
-category	"Dining"
-amount	"$10 / month"
-frequency	"monthly"
-expiration	null
-used	false
-notes	"Non-restaurant order. Requires activated DashPass."
-33	
-id	"csp-h-hotel"
-person	"H"
-card	"Chase Sapphire Preferred"
-benefit	"Chase Travel Hotel Credit"
-category	"Hotel"
-amount	"$100 / year"
-frequency	"annual"
-expiration	"2026-11-09"
-used	false
-notes	"Renews every year around Nov 9 (auto-rolls forward). Prepaid hotel via Chase Travel. Doubled to $100 in June 2026 (was $50 in your edit)."
-34	
-id	"hilton-h-credit"
-person	"H"
-card	"Hilton"
-benefit	"Hilton Credit"
-category	"Hotel"
-amount	"$60 / quarter"
-frequency	"quarterly"
-expiration	null
-used	false
-notes	"Quarterly Hilton statement credit."
-35	
-id	"barclay-h-hawaii-bogo"
-person	"H"
-card	"Barclays Hawaiian"
-benefit	"Hawaii BOGO 50% Companion"
-category	"Travel"
-amount	"B1G1 50%"
-frequency	"one-time"
-expiration	"2026-07-31"
-used	false
-notes	"FLAG: deadline in July per sheet - set an exact YYYY-MM-DD date so reminders can fire."
-36	
-id	"barclay-h-hawaii-companion100"
-person	"H"
-card	"Barclays Hawaiian"
-benefit	"$100 off Companion Fare"
-category	"Travel"
-amount	"$100"
-frequency	"annual"
-expiration	"2027-06-02"
-used	false
-notes	"Currently resets Dec 31; set 'expiration' to the real anniversary date if it differs."
-37	
-id	"instacart-h-grocery-1"
-person	"H"
-card	"Chase Instacart"
-benefit	"Grocery Credit #1 of 5"
-category	"Grocery"
-amount	"$10 / month"
-frequency	"monthly"
-expiration	null
-used	false
-notes	"One of 5 monthly $10 Instacart credits (usable separately)."
-38	
-id	"instacart-h-grocery-2"
-person	"H"
-card	"Chase Instacart"
-benefit	"Grocery Credit #2 of 5"
-category	"Grocery"
-amount	"$10 / month"
-frequency	"monthly"
-expiration	null
-used	false
-notes	"One of 5 monthly $10 Instacart credits (usable separately)."
-39	
-id	"instacart-h-grocery-3"
-person	"H"
-card	"Chase Instacart"
-benefit	"Grocery Credit #3 of 5"
-category	"Grocery"
-amount	"$10 / month"
-frequency	"monthly"
-expiration	null
-used	false
-notes	"One of 5 monthly $10 Instacart credits (usable separately)."
-40	
-id	"instacart-h-grocery-4"
-person	"H"
-card	"Chase Instacart"
-benefit	"Grocery Credit #4 of 5"
-category	"Grocery"
-amount	"$10 / month"
-frequency	"monthly"
-expiration	null
-used	false
-notes	"One of 5 monthly $10 Instacart credits (usable separately)."
-41	
-id	"instacart-h-grocery-5"
-person	"H"
-card	"Chase Instacart"
-benefit	"Grocery Credit #5 of 5"
-category	"Grocery"
-amount	"$10 / month"
-frequency	"monthly"
-expiration	null
-used	false
-notes	"One of 5 monthly $10 Instacart credits (usable separately)."
+{
+  "_comment": "YOUR DATA FILE. 'frequency' = monthly | quarterly | semiannual | annual | one-time. RECURRING deadlines: leave 'expiration' as null to use the calendar reset (end of month/quarter/half-year/year), OR set 'expiration' to a real YYYY-MM-DD date to anchor a specific renewal - the app rolls that date forward one period at a time automatically (use this for annual benefits that renew on a specific anniversary date, e.g. a free night that renews every Aug 22). ONE-TIME: set 'expiration' to a YYYY-MM-DD date, or null if unknown (shows as 'Date TBD'). Set 'used': true to dim a card and stop its reminders; set it back to false anytime to reinstate the benefit (full color, reminders resume). Tip: use the Status = Used filter on the board to find used items to flip back.",
+  "owner_email": "youremail@example.com", "clarkckl@gmail.com"
+  "people": {
+    "C": "C",
+    "H": "H"
+  },
+  "benefits": [
+    {
+      "id": "amex-plat-c-lululemon",
+      "person": "C",
+      "card": "Amex Platinum",
+      "benefit": "Lululemon Credit",
+      "category": "Shopping",
+      "amount": "$75 / quarter",
+      "frequency": "quarterly",
+      "expiration": null,
+      "used": false,
+      "notes": "Enroll in Amex app. U.S. lululemon stores (non-outlet) or lululemon.com."
+    },
+    {
+      "id": "amex-plat-c-saks",
+      "person": "C",
+      "card": "Amex Platinum",
+      "benefit": "Saks Fifth Avenue Credit",
+      "category": "Shopping",
+      "amount": "$50 / half",
+      "frequency": "semiannual",
+      "expiration": null,
+      "used": true,
+      "notes": "DISCONTINUED July 1, 2026 - no longer offered by Amex. Kept for reference."
+    },
+    {
+      "id": "amex-plat-c-equinox",
+      "person": "C",
+      "card": "Amex Platinum",
+      "benefit": "Equinox Credit",
+      "category": "Shopping",
+      "amount": "$300 / year",
+      "frequency": "annual",
+      "expiration": null,
+      "used": false,
+      "notes": "Calendar-year credit (resets Dec 31). Enrollment required. (Note: Equinox is a fitness/wellness perk - recategorized to Shopping per your edit.)"
+    },
+    {
+      "id": "amex-plat-c-oura",
+      "person": "C",
+      "card": "Amex Platinum",
+      "benefit": "Oura Ring Credit",
+      "category": "Shopping",
+      "amount": "$300",
+      "frequency": "annual",
+      "expiration": null,
+      "used": false,
+      "notes": "FLAG: Amex currently lists this as up to $200 one-time toward an Oura Ring, not $300/year - verify amount and whether it recurs."
+    },
+    {
+      "id": "amex-plat-c-resy",
+      "person": "C",
+      "card": "Amex Platinum",
+      "benefit": "Resy Dining Credit",
+      "category": "Dining",
+      "amount": "$100 / quarter",
+      "frequency": "quarterly",
+      "expiration": null,
+      "used": false,
+      "notes": "Enroll. U.S. Resy restaurants. $400/year total."
+    },
+    {
+      "id": "amex-plat-c-fhr",
+      "person": "C",
+      "card": "Amex Platinum",
+      "benefit": "Fine Hotels + Resorts Credit",
+      "category": "Hotel",
+      "amount": "$300 / half",
+      "frequency": "semiannual",
+      "expiration": null,
+      "used": false,
+      "notes": "$600/year. Prepaid FHR / Hotel Collection via Amex Travel."
+    },
+    {
+      "id": "amex-plat-c-airline",
+      "person": "C",
+      "card": "Amex Platinum",
+      "benefit": "Airline Fee Credit",
+      "category": "Travel",
+      "amount": "$200 / year",
+      "frequency": "annual",
+      "expiration": null,
+      "used": false,
+      "notes": "Calendar-year credit (resets Dec 31). Select one airline in your Amex account first."
+    },
+    {
+      "id": "amex-plat-c-digital",
+      "person": "C",
+      "card": "Amex Platinum",
+      "benefit": "Digital Entertainment Credit",
+      "category": "Entertainment",
+      "amount": "$25 / month",
+      "frequency": "monthly",
+      "expiration": null,
+      "used": false,
+      "notes": "Disney+, Hulu, ESPN+, NYT, Peacock, WSJ, YouTube. Enroll."
+    },
+    {
+      "id": "amex-plat-c-uber",
+      "person": "C",
+      "card": "Amex Platinum",
+      "benefit": "Uber Cash",
+      "category": "Dining",
+      "amount": "$15 / month",
+      "frequency": "monthly",
+      "expiration": null,
+      "used": false,
+      "notes": "$20 bonus in December. Add card to Uber account."
+    },
+    {
+      "id": "amex-gold-c-resy",
+      "person": "C",
+      "card": "Amex Gold",
+      "benefit": "Resy Credit",
+      "category": "Dining",
+      "amount": "$50 / half",
+      "frequency": "semiannual",
+      "expiration": null,
+      "used": false,
+      "notes": "Enroll. U.S. Resy restaurants ($100/year)."
+    },
+    {
+      "id": "amex-gold-c-dunkin",
+      "person": "C",
+      "card": "Amex Gold",
+      "benefit": "Dunkin' Credit",
+      "category": "Dining",
+      "amount": "$7 / month",
+      "frequency": "monthly",
+      "expiration": null,
+      "used": false,
+      "notes": "Enroll in Amex app. U.S. Dunkin' locations."
+    },
+    {
+      "id": "csp-c-doordash",
+      "person": "C",
+      "card": "Chase Sapphire Preferred",
+      "benefit": "DoorDash",
+      "category": "Dining",
+      "amount": "$10 / month",
+      "frequency": "monthly",
+      "expiration": null,
+      "used": false,
+      "notes": "Non-restaurant order. Requires activated DashPass."
+    },
+    {
+      "id": "csp-c-hotel",
+      "person": "C",
+      "card": "Chase Sapphire Preferred",
+      "benefit": "Chase Travel Hotel Credit",
+      "category": "Hotel",
+      "amount": "$100 / year",
+      "frequency": "annual",
+      "expiration": "2027-07-01",
+      "used": false,
+      "notes": "FLAG: benefit year 'starts in July' per sheet - the 2027-07-01 renewal date is a placeholder; confirm your account anniversary. Prepaid hotel via Chase Travel. Doubled to $100 in June 2026."
+    },
+    {
+      "id": "marriott-boundless-c-airline",
+      "person": "C",
+      "card": "Marriott Boundless",
+      "benefit": "Airline Credit (on spend over $250)",
+      "category": "Travel",
+      "amount": "$50 / half",
+      "frequency": "semiannual",
+      "expiration": null,
+      "used": false,
+      "notes": "FLAG: not a standard Marriott Boundless benefit - verify exact terms."
+    },
+    {
+      "id": "marriott-boundless-c-fn",
+      "person": "C",
+      "card": "Marriott Boundless",
+      "benefit": "Free Night Award (up to 35k)",
+      "category": "Hotel",
+      "amount": "1 night (up to 35k)",
+      "frequency": "annual",
+      "expiration": "2027-02-28",
+      "used": false,
+      "notes": "Current cert valid until Feb 2027; renews annually. Can top off with points. FLAG: confirm exact renewal day."
+    },
+    {
+      "id": "hilton-c-credit",
+      "person": "C",
+      "card": "Hilton",
+      "benefit": "Hilton Credit",
+      "category": "Hotel",
+      "amount": "$50 / quarter",
+      "frequency": "quarterly",
+      "expiration": null,
+      "used": false,
+      "notes": "Quarterly Hilton statement credit."
+    },
+    {
+      "id": "hilton-c-fn",
+      "person": "C",
+      "card": "Hilton",
+      "benefit": "Free Night Award",
+      "category": "Hotel",
+      "amount": "1 night",
+      "frequency": "one-time",
+      "expiration": "2026-09-08",
+      "used": false,
+      "notes": "Card-opening benefit, 2026 only (does not renew). Expires 09/08/2026."
+    },
+    {
+      "id": "ihg-c-fn",
+      "person": "C",
+      "card": "IHG",
+      "benefit": "Free Night Award",
+      "category": "Hotel",
+      "amount": "1 night",
+      "frequency": "annual",
+      "expiration": "2026-09-28",
+      "used": false,
+      "notes": "Anniversary free night. Expires/renews every Sep 28. Auto-rolls forward each year."
+    },
+    {
+      "id": "hyatt-c-fn",
+      "person": "C",
+      "card": "Hyatt",
+      "benefit": "Free Night Award",
+      "category": "Hotel",
+      "amount": "1 night",
+      "frequency": "annual",
+      "expiration": "2026-12-20",
+      "used": false,
+      "notes": "Anniversary free night. Expires/renews every Dec 20. Auto-rolls forward each year."
+    },
+    {
+      "id": "marriott-biz-h-fn-1",
+      "person": "H",
+      "card": "Marriott Business",
+      "benefit": "Free Night #1",
+      "category": "Hotel",
+      "amount": "1 night",
+      "frequency": "one-time",
+      "expiration": "2027-05-28",
+      "used": false,
+      "notes": "Welcome offer, 5 nights that can be used separately. Use by 5/28/2027."
+    },
+    {
+      "id": "marriott-biz-h-fn-2",
+      "person": "H",
+      "card": "Marriott Business",
+      "benefit": "Free Night #2",
+      "category": "Hotel",
+      "amount": "1 night",
+      "frequency": "one-time",
+      "expiration": "2027-05-28",
+      "used": false,
+      "notes": "Welcome offer, 5 nights that can be used separately. Use by 5/28/2027."
+    },
+    {
+      "id": "marriott-biz-h-fn-3",
+      "person": "H",
+      "card": "Marriott Business",
+      "benefit": "Free Night #3",
+      "category": "Hotel",
+      "amount": "1 night",
+      "frequency": "one-time",
+      "expiration": "2027-05-28",
+      "used": false,
+      "notes": "Welcome offer, 5 nights that can be used separately. Use by 5/28/2027."
+    },
+    {
+      "id": "marriott-biz-h-fn-4",
+      "person": "H",
+      "card": "Marriott Business",
+      "benefit": "Free Night #4",
+      "category": "Hotel",
+      "amount": "1 night",
+      "frequency": "one-time",
+      "expiration": "2027-05-28",
+      "used": false,
+      "notes": "Welcome offer, 5 nights that can be used separately. Use by 5/28/2027."
+    },
+    {
+      "id": "marriott-biz-h-fn-5",
+      "person": "H",
+      "card": "Marriott Business",
+      "benefit": "Free Night #5",
+      "category": "Hotel",
+      "amount": "1 night",
+      "frequency": "one-time",
+      "expiration": "2027-05-28",
+      "used": false,
+      "notes": "Welcome offer, 5 nights that can be used separately. Use by 5/28/2027."
+    },
+    {
+      "id": "boa-atmos-c-companion",
+      "person": "C",
+      "card": "BoA Atmos Ascent",
+      "benefit": "$99 Companion Fare",
+      "category": "Travel",
+      "amount": "$99",
+      "frequency": "one-time",
+      "expiration": "2027-03-17",
+      "used": false,
+      "notes": "Annual benefit."
+    },
+    {
+      "id": "strata-h-splurge",
+      "person": "H",
+      "card": "Citi Strata Elite",
+      "benefit": "Splurge Credit",
+      "category": "Shopping",
+      "amount": "$200 / year",
+      "frequency": "annual",
+      "expiration": null,
+      "used": false,
+      "notes": "Calendar-year credit (resets Dec 31). Register up to 2 brands: Best Buy, American Airlines, Live Nation, 1stDibs, Future PT."
+    },
+    {
+      "id": "strata-h-blacklane",
+      "person": "H",
+      "card": "Citi Strata Elite",
+      "benefit": "Blacklane Credit",
+      "category": "Travel",
+      "amount": "$100 / half",
+      "frequency": "semiannual",
+      "expiration": null,
+      "used": false,
+      "notes": "$100 Jan-Jun and $100 Jul-Dec. Automatic (no registration)."
+    },
+    {
+      "id": "strata-h-hotel",
+      "person": "H",
+      "card": "Citi Strata Elite",
+      "benefit": "Citi Travel Hotel Benefit",
+      "category": "Hotel",
+      "amount": "$300 / year",
+      "frequency": "annual",
+      "expiration": null,
+      "used": false,
+      "notes": "Calendar-year credit (resets Dec 31). $300 off a 2+ night prepaid stay booked via cititravel.com."
+    },
+    {
+      "id": "ritz-h-airline",
+      "person": "H",
+      "card": "Ritz-Carlton",
+      "benefit": "Airline Incidental Credit",
+      "category": "Travel",
+      "amount": "$300 / year",
+      "frequency": "annual",
+      "expiration": null,
+      "used": false,
+      "notes": "Calendar-year credit (resets Dec 31). Not automatic - call J.P. Morgan 1-855-896-2222 to apply."
+    },
+    {
+      "id": "ritz-h-fn",
+      "person": "H",
+      "card": "Ritz-Carlton",
+      "benefit": "Free Night Award (up to 85k)",
+      "category": "Hotel",
+      "amount": "1 night",
+      "frequency": "annual",
+      "expiration": "2026-08-22",
+      "used": false,
+      "notes": "Renews every year around Aug 22 (auto-rolls forward). Can top off up to 25k pts."
+    },
+    {
+      "id": "amex-gold-h-resy",
+      "person": "H",
+      "card": "Amex Gold",
+      "benefit": "Resy Credit",
+      "category": "Dining",
+      "amount": "$50 / half",
+      "frequency": "semiannual",
+      "expiration": null,
+      "used": false,
+      "notes": "Enroll. U.S. Resy restaurants ($100/year)."
+    },
+    {
+      "id": "amex-gold-h-dunkin",
+      "person": "H",
+      "card": "Amex Gold",
+      "benefit": "Dunkin' Credit",
+      "category": "Dining",
+      "amount": "$7 / month",
+      "frequency": "monthly",
+      "expiration": null,
+      "used": false,
+      "notes": "Enroll in Amex app. U.S. Dunkin' locations."
+    },
+    {
+      "id": "csp-h-doordash",
+      "person": "H",
+      "card": "Chase Sapphire Preferred",
+      "benefit": "DoorDash",
+      "category": "Dining",
+      "amount": "$10 / month",
+      "frequency": "monthly",
+      "expiration": null,
+      "used": false,
+      "notes": "Non-restaurant order. Requires activated DashPass."
+    },
+    {
+      "id": "csp-h-hotel",
+      "person": "H",
+      "card": "Chase Sapphire Preferred",
+      "benefit": "Chase Travel Hotel Credit",
+      "category": "Hotel",
+      "amount": "$100 / year",
+      "frequency": "annual",
+      "expiration": "2026-11-09",
+      "used": false,
+      "notes": "Renews every year around Nov 9 (auto-rolls forward). Prepaid hotel via Chase Travel. Doubled to $100 in June 2026 (was $50 in your edit)."
+    },
+    {
+      "id": "hilton-h-credit",
+      "person": "H",
+      "card": "Hilton",
+      "benefit": "Hilton Credit",
+      "category": "Hotel",
+      "amount": "$60 / quarter",
+      "frequency": "quarterly",
+      "expiration": null,
+      "used": false,
+      "notes": "Quarterly Hilton statement credit."
+    },
+    {
+      "id": "barclay-h-hawaii-bogo",
+      "person": "H",
+      "card": "Barclays Hawaiian",
+      "benefit": "Hawaii BOGO 50% Companion",
+      "category": "Travel",
+      "amount": "B1G1 50%",
+      "frequency": "one-time",
+      "expiration":"2026-07-31",
+      "used": false,
+      "notes": "FLAG: deadline in July per sheet - set an exact YYYY-MM-DD date so reminders can fire."
+    },
+    {
+      "id": "barclay-h-hawaii-companion100",
+      "person": "H",
+      "card": "Barclays Hawaiian",
+      "benefit": "$100 off Companion Fare",
+      "category": "Travel",
+      "amount": "$100",
+      "frequency": "annual",
+      "expiration": "2027-06-02",
+      "used": false,
+      "notes": "Currently resets Dec 31; set 'expiration' to the real anniversary date if it differs."
+    },
+    {
+      "id": "instacart-h-grocery-1",
+      "person": "H",
+      "card": "Chase Instacart",
+      "benefit": "Grocery Credit #1 of 5",
+      "category": "Grocery",
+      "amount": "$10 / month",
+      "frequency": "monthly",
+      "expiration": null,
+      "used": false,
+      "notes": "One of 5 monthly $10 Instacart credits (usable separately)."
+    },
+    {
+      "id": "instacart-h-grocery-2",
+      "person": "H",
+      "card": "Chase Instacart",
+      "benefit": "Grocery Credit #2 of 5",
+      "category": "Grocery",
+      "amount": "$10 / month",
+      "frequency": "monthly",
+      "expiration": null,
+      "used": false,
+      "notes": "One of 5 monthly $10 Instacart credits (usable separately)."
+    },
+    {
+      "id": "instacart-h-grocery-3",
+      "person": "H",
+      "card": "Chase Instacart",
+      "benefit": "Grocery Credit #3 of 5",
+      "category": "Grocery",
+      "amount": "$10 / month",
+      "frequency": "monthly",
+      "expiration": null,
+      "used": false,
+      "notes": "One of 5 monthly $10 Instacart credits (usable separately)."
+    },
+    {
+      "id": "instacart-h-grocery-4",
+      "person": "H",
+      "card": "Chase Instacart",
+      "benefit": "Grocery Credit #4 of 5",
+      "category": "Grocery",
+      "amount": "$10 / month",
+      "frequency": "monthly",
+      "expiration": null,
+      "used": false,
+      "notes": "One of 5 monthly $10 Instacart credits (usable separately)."
+    },
+    {
+      "id": "instacart-h-grocery-5",
+      "person": "H",
+      "card": "Chase Instacart",
+      "benefit": "Grocery Credit #5 of 5",
+      "category": "Grocery",
+      "amount": "$10 / month",
+      "frequency": "monthly",
+      "expiration": null,
+      "used": false,
+      "notes": "One of 5 monthly $10 Instacart credits (usable separately)."
+    }
+  ]
+}
