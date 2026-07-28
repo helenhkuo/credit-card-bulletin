@@ -108,11 +108,35 @@
       "card": "Amex Platinum",
       "benefit": "Uber Cash",
       "category": "Dining",
-      "amount": "$15 / month",
+      "amount": "$35 / month",
       "frequency": "monthly",
       "expiration": null,
       "used": false,
       "notes": "$20 bonus in December. Add card to Uber account."
+    },
+    {
+      "id": "amex-gold-c-grubhub",
+      "person": "C",
+      "card": "Amex Gold",
+      "benefit": "Grubhub Credit",
+      "category": "Dining",
+      "amount": "$10 / month",
+      "frequency": "monthly",
+      "expiration": null,
+      "used": false,
+      "notes": "Grubhub (including Seamless), Buffalo Wild Wings, Five Guys, The Cheesecake Factory, and Wonder."
+    },
+    {
+      "id": "amex-gold-c-grubhub",
+      "person": "H",
+      "card": "Amex Gold",
+      "benefit": "Grubhub Credit",
+      "category": "Dining",
+      "amount": "$10 / month",
+      "frequency": "monthly",
+      "expiration": null,
+      "used": false,
+      "notes": "Grubhub (including Seamless), Buffalo Wild Wings, Five Guys, The Cheesecake Factory, and Wonder."
     },
     {
       "id": "amex-gold-c-resy",
