@@ -204,7 +204,7 @@ secret**. Add these:
 | `SMTP_USER` | your full Gmail address |
 | `SMTP_PASSWORD` | the 16-character app password |
 | `EMAIL_FROM` | your full Gmail address |
-| `EMAIL_TO` | where reminders should go (can be the same address) |
+| `EMAIL_TO` | where reminders go. For **two (or more) people**, separate addresses with commas, e.g. `alice@gmail.com, bob@outlook.com` |
 
 Optional: under the **Variables** tab add `REMINDER_DAYS` = `15,10,5` to change
 which days trigger reminders.
