@@ -419,7 +419,15 @@ function applyFilters(list) {
     category: (a, b) => a.category.localeCompare(b.category) || byDate(a, b),
     person: (a, b) => (a.person || "~").localeCompare(b.person || "~") || byDate(a, b),
   };
-  return out.sort(sorters[f.sort] || byDate);
+  const chosen = sorters[f.sort] || byDate;
+  // Always push "used" items to the back. A refreshed offer (new period) is no
+  // longer used, so it automatically rejoins the normal ordering.
+  return out.sort((a, b) => {
+    const ua = isUsed(a) ? 1 : 0;
+    const ub = isUsed(b) ? 1 : 0;
+    if (ua !== ub) return ua - ub;
+    return chosen(a, b);
+  });
 }
 
 function cardHtml(b) {
