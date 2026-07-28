@@ -20,7 +20,8 @@ read from environment variables so nothing secret lives in the repo:
     SMTP_USER      the sending email account (login)
     SMTP_PASSWORD  app password / SMTP key (NOT your normal password)
     EMAIL_FROM     optional; defaults to SMTP_USER
-    EMAIL_TO       optional; defaults to owner_email in benefits.json
+    EMAIL_TO       optional; defaults to owner_email in benefits.json. Accepts
+                   multiple recipients separated by commas or semicolons.
     REMINDER_DAYS  optional; comma list, defaults to "15,10,5"
     DRY_RUN        optional; "1" prints emails instead of sending
     USAGE_API_URL  optional; Google Apps Script Web App URL. If set, the script
@@ -34,6 +35,7 @@ from __future__ import annotations
 import calendar
 import json
 import os
+import re
 import smtplib
 import sys
 import urllib.parse
@@ -202,7 +204,16 @@ def build_email_body(due: list[tuple[dict, int]], people: dict) -> tuple[str, st
     return text, html
 
 
-def send_email(subject: str, text: str, html: str, to_addr: str) -> None:
+def parse_recipients(raw) -> list[str]:
+    """Split a comma/semicolon-separated string (or list) into clean addresses."""
+    if isinstance(raw, list):
+        parts = raw
+    else:
+        parts = re.split(r"[,;]", str(raw or ""))
+    return [p.strip() for p in parts if p and p.strip()]
+
+
+def send_email(subject: str, text: str, html: str, to_addrs: list[str]) -> None:
     host = os.environ["SMTP_HOST"]
     port = int(os.environ.get("SMTP_PORT", "587"))
     user = os.environ["SMTP_USER"]
@@ -212,14 +223,14 @@ def send_email(subject: str, text: str, html: str, to_addr: str) -> None:
     msg = MIMEMultipart("alternative")
     msg["Subject"] = subject
     msg["From"] = from_addr
-    msg["To"] = to_addr
+    msg["To"] = ", ".join(to_addrs)
     msg.attach(MIMEText(text, "plain"))
     msg.attach(MIMEText(html, "html"))
 
     with smtplib.SMTP(host, port) as server:
         server.starttls()
         server.login(user, password)
-        server.sendmail(from_addr, [to_addr], msg.as_string())
+        server.sendmail(from_addr, to_addrs, msg.as_string())
 
 
 def main() -> int:
@@ -236,20 +247,21 @@ def main() -> int:
         print(f"[{today}] No benefits due at {sorted(reminder_days)} days. Nothing to send.")
         return 0
 
-    to_addr = os.environ.get("EMAIL_TO") or data.get("owner_email")
-    if not to_addr or "example.com" in to_addr:
-        print("ERROR: No valid recipient. Set EMAIL_TO or owner_email in benefits.json.", file=sys.stderr)
+    recipients = parse_recipients(os.environ.get("EMAIL_TO") or data.get("owner_email"))
+    recipients = [a for a in recipients if "example.com" not in a]
+    if not recipients:
+        print("ERROR: No valid recipient. Set EMAIL_TO (comma-separated for multiple) or owner_email in benefits.json.", file=sys.stderr)
         return 1
 
     subject = f"{len(due)} credit card benefit(s) approaching deadline"
     text, html = build_email_body(due, data.get("people", {}))
 
     if os.environ.get("DRY_RUN") == "1":
-        print(f"[DRY_RUN] Would email {to_addr}:\nSubject: {subject}\n\n{text}")
+        print(f"[DRY_RUN] Would email {', '.join(recipients)}:\nSubject: {subject}\n\n{text}")
         return 0
 
-    send_email(subject, text, html, to_addr)
-    print(f"[{today}] Sent reminder for {len(due)} benefit(s) to {to_addr}.")
+    send_email(subject, text, html, recipients)
+    print(f"[{today}] Sent reminder for {len(due)} benefit(s) to {', '.join(recipients)}.")
     return 0
 
 
