@@ -16,5 +16,5 @@ window.CCB_CONFIG = {
 
   // Optional: set a passcode to show a prompt before the board loads. This is a
   // light deterrent only (it can be bypassed by a technical user). Leave "" off.
-  passcode: "formentera",
+  passcode: "qwerty",
 };
