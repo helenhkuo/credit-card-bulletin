@@ -3,77 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Credit Card Benefits Bulletin</title>
+  <title>Card Desk</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="header-inner">
-      <div class="title-block">
-        <h1>💳 Credit Card Benefits Bulletin</h1>
-        <p class="subtitle">Track your perks. Never let a benefit expire again.</p>
-        <span id="sync-status" class="sync-badge sync-off" title="">Sync: off</span>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <header class="top">
+    <div class="top-inner">
+      <div class="brand">
+        <p class="brand-mark">Card Desk</p>
+        <p class="brand-sub">Benefits &amp; spend goals in one place</p>
+        <span id="sync-status" class="sync-badge sync-off">Offline demo</span>
       </div>
-      <div class="stats" id="stats"></div>
+
+      <nav class="view-tabs" role="tablist">
+        <button type="button" class="tab is-active" data-view="overview" role="tab">Overview</button>
+        <button type="button" class="tab" data-view="benefits" role="tab">Benefits</button>
+        <button type="button" class="tab" data-view="spends" role="tab">Spend goals</button>
+      </nav>
+
+      <div class="top-actions">
+        <button type="button" class="btn primary" id="btn-add">+ Add</button>
+        <button type="button" class="btn ghost" id="btn-pass" title="Change site passcode">Passcode</button>
+        <button type="button" class="btn ghost" id="btn-refresh" title="Reload from Sheet">↻</button>
+      </div>
     </div>
+
+    <div class="stats" id="stats"></div>
   </header>
 
-  <main class="container">
+  <main class="shell">
     <section class="controls">
-      <div class="control-group">
-        <label for="search">Search</label>
-        <input type="search" id="search" placeholder="Search card, benefit, notes…" />
-      </div>
-
-      <div class="control-group">
-        <label for="filter-category">Category</label>
-        <select id="filter-category"><option value="">All categories</option></select>
-      </div>
-
-      <div class="control-group">
-        <label for="filter-card">Card</label>
-        <select id="filter-card"><option value="">All cards</option></select>
-      </div>
-
-      <div class="control-group">
-        <label for="filter-status">Status</label>
-        <select id="filter-status">
-          <option value="">All statuses</option>
-          <option value="available">Available</option>
-          <option value="soon">Expiring soon (≤15 days)</option>
-          <option value="used">Used</option>
-          <option value="expired">Expired</option>
-        </select>
-      </div>
-
-      <div class="control-group">
-        <label for="sort-by">Sort by</label>
-        <select id="sort-by">
-          <option value="expiration">Deadline (soonest)</option>
-          <option value="expiration-desc">Deadline (latest)</option>
-          <option value="person">Person</option>
-          <option value="card">Card name</option>
-          <option value="category">Category</option>
-        </select>
-      </div>
+      <input type="search" id="search" placeholder="Search…" />
+      <select id="filter-person"><option value="">All people</option></select>
+      <select id="filter-card"><option value="">All cards</option></select>
+      <select id="filter-status">
+        <option value="">All statuses</option>
+      </select>
+      <select id="sort-by"></select>
     </section>
 
     <section class="board" id="board" aria-live="polite"></section>
-    <p class="empty-note" id="empty-note" hidden>No benefits match your filters.</p>
+    <p class="empty" id="empty" hidden>Nothing here yet. Click <strong>+ Add</strong> to create one.</p>
   </main>
 
-  <footer class="site-footer">
-    <p>
-      Click <strong>Mark used</strong> on any card to log it (saved in this browser).
-      <button type="button" id="export-log" class="link-btn">Export usage log (CSV)</button>
-    </p>
-    <p class="footer-sub">Add or edit benefits in <code>data/benefits.json</code>. Last data load: <span id="loaded-at"></span></p>
+  <dialog id="editor" class="editor">
+    <form method="dialog" id="editor-form">
+      <header class="editor-head">
+        <h2 id="editor-title">Add item</h2>
+        <button type="button" class="icon-close" id="editor-close" aria-label="Close">×</button>
+      </header>
+      <div class="editor-body" id="editor-fields"></div>
+      <footer class="editor-foot">
+        <button type="button" class="btn danger" id="editor-delete" hidden>Delete</button>
+        <div class="spacer"></div>
+        <button type="button" class="btn ghost" id="editor-cancel">Cancel</button>
+        <button type="submit" class="btn primary" id="editor-save">Save</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <footer class="foot">
+    <p>Data lives in your Google Sheet. Change the site passcode in the <strong>Config</strong> tab (or via the Passcode button).</p>
   </footer>
 
   <script src="js/config.js"></script>
+  <script src="js/demo-data.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
