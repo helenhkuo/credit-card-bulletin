@@ -85,8 +85,7 @@ Host on GitHub Pages (or keep using the local server). The badge should say
 
 **Config:**  
 `key | value` — put your site passcode in the row where `key` is `passcode`.  
-Leave the value blank for no gate. Edit anytime; no GitHub upload needed.  
-You can also use the **Passcode** button on the website.
+Leave the value blank for no gate. Edit anytime; no GitHub upload needed.
 
 You can still bulk-edit in Sheets anytime. The website is just the easier daily path.
 

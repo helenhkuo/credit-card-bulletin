@@ -40,7 +40,6 @@ const els = {
   editorCancel: document.getElementById("editor-cancel"),
   btnAdd: document.getElementById("btn-add"),
   btnRefresh: document.getElementById("btn-refresh"),
-  btnPass: document.getElementById("btn-pass"),
 };
 
 const LS_PASS = "ccb_v2_pass";
@@ -238,7 +237,7 @@ async function ensureUnlocked() {
       return true;
     }
     document.body.innerHTML =
-      '<p style="font-family:sans-serif;padding:48px;text-align:center;color:#12201c">Incorrect passcode. Refresh to try again.</p>';
+      '<p style="font-family:sans-serif;padding:48px;text-align:center;color:#eef0ff;background:#0f1220;min-height:100vh">Incorrect passcode. Refresh to try again.</p>';
     return false;
   }
 
@@ -290,35 +289,8 @@ async function ensureUnlocked() {
   }
 
   document.body.innerHTML =
-    '<p style="font-family:sans-serif;padding:48px;text-align:center;color:#12201c">Incorrect passcode. Refresh to try again.</p>';
+    '<p style="font-family:sans-serif;padding:48px;text-align:center;color:#eef0ff;background:#0f1220;min-height:100vh">Incorrect passcode. Refresh to try again.</p>';
   return false;
-}
-
-async function changePasscode() {
-  if (!USE_REMOTE) {
-    alert("In demo mode, set passcode in js/config.js.\nOnce Sheets is connected, change it in the Config tab or with this button.");
-    return;
-  }
-  const next = prompt(
-    "New site passcode:\n\n• Type a new phrase to set/change it\n• Leave blank and OK to remove the passcode gate\n• Cancel to keep the current one"
-  );
-  if (next === null) return;
-  try {
-    await api("set_passcode", { passcode: next });
-    if (next.trim()) {
-      sessionStorage.setItem(LS_PASS, next.trim());
-      alert("Passcode updated. You’ll need it next time you open the site.");
-    } else {
-      sessionStorage.removeItem(LS_PASS);
-      alert("Passcode removed. The site is open (anyone with the URL can view it).");
-    }
-  } catch (e) {
-    if (String(e.message) === "bad passcode") {
-      alert("Current session passcode is wrong. Refresh and unlock first, then try again.");
-    } else {
-      alert("Could not update passcode: " + (e.message || e));
-    }
-  }
 }
 
 // ---------------------------------------------------------------------------
@@ -938,7 +910,6 @@ els.editorFields.addEventListener("click", (e) => {
 });
 
 els.btnAdd.addEventListener("click", () => openEditor("new"));
-if (els.btnPass) els.btnPass.addEventListener("click", changePasscode);
 els.btnRefresh.addEventListener("click", async () => {
   try {
     await loadAll();
