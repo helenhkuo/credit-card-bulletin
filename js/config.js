@@ -8,10 +8,10 @@
 // -----------------------------------------------------------------------------
 window.CCB_CONFIG = {
   // Web app URL ending in /exec:
-  apiUrl: "",
+  apiUrl: "https://script.google.com/macros/s/AKfycbyLiEP5WTLuM27LSGRyP9E6SM3rgXjtyUDiTx5GDdqmnYNGq9noivapF8P5F44YkNDB/exec",
 
   // Must match TOKEN in google-apps-script/Code.gs
-  apiToken: "",
+  apiToken: "mickeymickeymickey",
 
   // Demo-mode only (ignored when apiUrl is set). Prefer Sheet → Config.
   passcode: "",
