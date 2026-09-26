@@ -129,9 +129,11 @@ function money(n) {
 // Status
 // ---------------------------------------------------------------------------
 function isBenefitUsed(b) {
+  const period = (b.used_period || "").toString().trim().slice(0, 10);
+  if (!period) return false;
   const d = effectiveDeadline(b);
-  if (!d) return !!b.used_period;
-  return b.used_period === toISODate(d);
+  if (!d) return true; // marked used with no deadline
+  return period === toISODate(d);
 }
 
 function benefitStatus(b) {
@@ -794,17 +796,31 @@ async function deleteEditing() {
 async function toggleUsed(id) {
   const b = state.benefits.find((x) => x.id === id);
   if (!b) return;
-  const period = toISODate(effectiveDeadline(b));
+  const period = toISODate(effectiveDeadline(b)) || "";
+  const prev = b.used_period || "";
   const next = isBenefitUsed(b) ? "" : period;
+
+  // Optimistic UI: update immediately, then sync to Sheet
+  b.used_period = next;
+  render();
+
+  if (!USE_REMOTE) return;
+
   try {
-    if (USE_REMOTE) {
-      const res = await api("benefit_set_used", { id, used_period: next });
-      Object.assign(b, res.benefit);
-    } else {
-      b.used_period = next;
+    const res = await api("benefit_set_used", { id, used_period: next });
+    if (res.benefit) {
+      // Keep a clean YYYY-MM-DD string even if the API returns something odd
+      const remote = res.benefit.used_period;
+      b.used_period = remote == null || remote === ""
+        ? ""
+        : String(remote).trim().slice(0, 10);
+      // Only re-render if server disagrees
+      if (b.used_period !== next) render();
     }
-    render();
+    setSync("on", "Connected to Google Sheets.");
   } catch (err) {
+    b.used_period = prev; // roll back
+    render();
     alert("Could not update used state: " + (err.message || err));
     setSync("error", String(err.message || err));
   }
